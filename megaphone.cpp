@@ -1,19 +1,25 @@
 #include <iostream>
 #include <string>
-#include <string.h>
 
-std::string	&toUpper(std::string &line)
+char	ee_to_upper(char c)
 {
-	for (int i = 0; i < line.size(); ++i)
-		line[i] = std::toupper(line[i]);
-	return (line);
+	return ('a' <= c && c <= 'z' ? c + 'A' - 'a' : c);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	std::string	line;
+	const std::string	not_param("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
 
-	std::cin >> line;
-	std::cout << toUpper(line) << std::endl;
+	if (argc == 1)
+		std::cout << not_param;
+	else
+	{
+		for (int i = 1; i < argc; ++i)
+		{
+			for (int j = 0; argv[i][j] != '\0'; ++j)
+				std::cout << ee_to_upper(argv[i][j]);
+		}
+	}
+	std::cout << std::endl;
 	return (0);
 }
