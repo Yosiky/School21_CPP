@@ -3,6 +3,7 @@
 
 # include "Contact.h"
 # include <iostream>
+# include <iomanip>
 # include <stdint.h>
 
 # define PHONEBOOK_SIZE 8
@@ -19,11 +20,9 @@ public:
 
 	void	add(const Contact &value);
 	void	list(void) const;
-	void	search(const Contact &value) const;
-
-	PhoneBook	&operator+=(Contact &value);
+	//void	search(const Contact &value) const;
 };
 
-ostream &operator<<(ostream &out, PhoneBook &value);
+std::ostream &operator<<(std::ostream &out, PhoneBook &value);
 
 #endif

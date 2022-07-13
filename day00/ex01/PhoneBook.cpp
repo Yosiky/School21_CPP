@@ -31,12 +31,9 @@ void	PhoneBook::list(void) const
 	}
 }
 
+/*
 void	PhoneBook::search(const Contact &value) const
 {
-	
-}
 
-PhoneBook	PhoneBook::&operator+=(Contact &value)
-{
-	
 }
+*/

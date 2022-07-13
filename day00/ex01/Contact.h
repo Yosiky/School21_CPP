@@ -20,13 +20,13 @@ public:
 	Contact();
 	~Contact();
 
-	void	init(void);
-	void	getFirstName(void) const;
-	void	getLastName(void) const;
-	void	getNickName(void) const;
-	void	getPhoneNumber(void) const;
+	void		init(void);
+	std::string	&getFirstName(void);
+	std::string	&getLastName(void);
+	std::string	&getNickName(void);
+	std::string	&getPhoneNumber(void);
 };
 
-istream &operator>>(istream &in, Contact &value);
+std::istream &operator>>(std::istream &in, Contact &value);
 
 #endif

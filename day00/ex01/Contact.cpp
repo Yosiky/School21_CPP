@@ -15,27 +15,27 @@ void	Contact::init(void)
 	INPUT_DATA("Secret: ", darkestSecret);
 }
 
-void	getFirstName(void) const
+std::string	&Contact::getFirstName(void)
 {
 	return (firstName);
 }
 
-void	getLastName(void) const
+std::string	&Contact::getLastName(void)
 {
 	return (lastName);
 }
 
-void	getNickName(void) const
+std::string	&Contact::getNickName(void)
 {
 	return (nickname);
 }
 
-void	getPhoneNumber(void) const
+std::string	&Contact::getPhoneNumber(void)
 {
 	return (phoneNumber);
 }
 
-istream &operator>>(istream &in, Contact &value)
+std::istream &operator>>(std::istream &in, Contact &value)
 {
 	value.init();
 	return (in);

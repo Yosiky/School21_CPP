@@ -5,26 +5,22 @@
 
 int	main(void)
 {
-	//std::string	keyWord;
-	//PhoneBook	book;
+	std::string	keyWord;
+	PhoneBook	book;
 	Contact		people;
 
-	std::cin >> people;
-	std::cout << people.getFirstName() << std::endl;
-	/*
 	while (1)
 	{
-		std::cin >> kyeWord;
+		std::cin >> keyWord;
 		if (keyWord == "ADD")
 		{
 			std::cin >> people;
-			book += people;
+			book.add(people);
 		}
 		else if (keyWord == "SEARCH")
-			std::cout << book;
+			book.list();
 		else if (keyWord == "EXIT")
 			break ;
 	}
-	*/
 	return (0);
 }
