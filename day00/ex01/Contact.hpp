@@ -1,5 +1,5 @@
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <string>
 # include <iostream>
@@ -10,23 +10,22 @@
 
 class Contact
 {
-private:
+public:
 	std::string	firstName;
 	std::string	lastName;
 	std::string	nickname;
 	std::string	phoneNumber;
 	std::string	darkestSecret;
-public:
+
 	Contact();
+	Contact(const Contact &value);
 	~Contact();
 
-	void		init(void);
-	std::string	&getFirstName(void);
-	std::string	&getLastName(void);
-	std::string	&getNickName(void);
-	std::string	&getPhoneNumber(void);
+	Contact	&operator=(const Contact &value);
+	
 };
 
 std::istream &operator>>(std::istream &in, Contact &value);
+std::ostream &operator<<(std::ostream &out, const Contact &value);
 
 #endif

@@ -1,42 +1,48 @@
-#include "Contact.h"
+#include "Contact.hpp"
 
 Contact::Contact()
 { }
 
+Contact::Contact(const Contact &value)
+{
+	*this = value;
+}
+
 Contact::~Contact()
 { }
 
-void	Contact::init(void)
+Contact	&Contact::operator=(const Contact &value)
 {
-	INPUT_DATA("First name: ", firstName);
-	INPUT_DATA("Last name: ", lastName);
-	INPUT_DATA("Nickname: ", nickname);
-	INPUT_DATA("Phone number: ", phoneNumber);
-	INPUT_DATA("Secret: ", darkestSecret);
+	firstName = value.firstName;
+	lastName = value.lastName;
+	nickname = value.nickname;
+	phoneNumber = value.phoneNumber;
+	darkestSecret = value.darkestSecret;
+	return (*this);
 }
 
-std::string	&Contact::getFirstName(void)
+static void	outputMsgAndWaitInput(std::istream &in, const std::string &str, std::string &value)
 {
-	return (firstName);
-}
-
-std::string	&Contact::getLastName(void)
-{
-	return (lastName);
-}
-
-std::string	&Contact::getNickName(void)
-{
-	return (nickname);
-}
-
-std::string	&Contact::getPhoneNumber(void)
-{
-	return (phoneNumber);
+	std::cout << str;
+	in >> value;
 }
 
 std::istream &operator>>(std::istream &in, Contact &value)
 {
-	value.init();
+	outputMsgAndWaitInput(in, "First name: ", value.firstName);
+	outputMsgAndWaitInput(in, "Last name: ", value.lastName);
+	outputMsgAndWaitInput(in, "Nickname: ", value.nickname);
+	outputMsgAndWaitInput(in, "Phone number: ", value.phoneNumber);
+	outputMsgAndWaitInput(in, "Secret: ", value.darkestSecret);
 	return (in);
+}
+
+std::ostream &operator<<(std::ostream &out, const Contact &value)
+{
+	out << "First name: " << value.firstName << std::endl
+		<< "Last name: " << value.lastName << std::endl
+		<< "Nickname: " << value.nickname << std::endl
+		<< "Phone number: " << value.phoneNumber << std::endl
+		<< "Secret: " << value.darkestSecret << std::endl;
+	return (out);
 }
