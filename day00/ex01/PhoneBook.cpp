@@ -24,7 +24,7 @@ PhoneBook	&PhoneBook::operator=(const PhoneBook &value)
 
 const Contact	&PhoneBook::operator[](int32_t number)
 {
-	if (number < 0 || number >= PHONEBOOK_SIZE)
+	if (number < 0 || number >= PHONEBOOK_SIZE || number >= s)
 		throw std::runtime_error("Invalid index");
 	return (array[(l + number) % PHONEBOOK_SIZE]);
 }

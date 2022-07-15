@@ -5,13 +5,8 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-
-
-
-
 int	main(void)
 {
-	std::stringstream	line;
 	std::string	keyWord;
 	PhoneBook	book;
 	Contact		people;
@@ -22,6 +17,7 @@ int	main(void)
 		try
 		{
 			std::cin >> keyWord;
+			std::cin.ignore();
 			if (keyWord == "ADD")
 			{
 				std::cin >> people;
@@ -29,13 +25,13 @@ int	main(void)
 			}
 			else if (keyWord == "SEARCH")
 			{
+				std::stringstream	line;
 				std::cout << book;
 				std::cout << "Input index people: ";
-				std::cin.ignore();
 				std::getline(std::cin, keyWord);
 				line << keyWord;
 				line >> number;
-				if (line.fail())
+				if (line.fail() || !line.eof())
 					throw std::runtime_error("Invalid line");
 				std::cout << book[number];
 			}
@@ -46,7 +42,6 @@ int	main(void)
 		{
 			std::cerr << e.what() << std::endl;
 		}
-		line.ignore();
 	}
 	return (0);
 }
