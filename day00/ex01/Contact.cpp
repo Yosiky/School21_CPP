@@ -21,10 +21,12 @@ Contact	&Contact::operator=(const Contact &value)
 	return (*this);
 }
 
-static void	outputMsgAndWaitInput(std::istream &in, const std::string &str, std::string &value)
+void	outputMsgAndWaitInput(std::istream &in, const std::string &str, std::string &value)
 {
 	std::cout << str;
-	in >> value;
+	value = "";
+	while (value.size() == 0)
+		std::getline(in, value);
 }
 
 std::istream &operator>>(std::istream &in, Contact &value)

@@ -22,10 +22,10 @@ public:
 	~Contact();
 
 	Contact	&operator=(const Contact &value);
-	
 };
 
-std::istream &operator>>(std::istream &in, Contact &value);
-std::ostream &operator<<(std::ostream &out, const Contact &value);
+std::istream	&operator>>(std::istream &in, Contact &value);
+std::ostream	&operator<<(std::ostream &out, const Contact &value);
+void			outputMsgAndWaitInput(std::istream &in, const std::string &str, std::string &value);
 
 #endif

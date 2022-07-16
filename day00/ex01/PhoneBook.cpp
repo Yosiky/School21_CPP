@@ -38,8 +38,8 @@ void	PhoneBook::add(const Contact &value)
 	}
 	else 
 	{
-		l = (l + 1) % PHONEBOOK_SIZE;
 		array[(l + s) % PHONEBOOK_SIZE] = value;
+		l = (l + 1) % PHONEBOOK_SIZE;
 	}
 }
 
@@ -66,7 +66,10 @@ static const std::string	outputMsg(const std::string &value)
 {
 	std::stringstream	str;
 
-	str << std::setw(10) << std::setiosflags(std::ios_base::right) << value;
+	if (value.size() <= 10)
+		str << std::setw(10) << std::setiosflags(std::ios_base::right) << value;
+	else
+		str << value.substr(0, 9) << '.';
 	return (str.str());
 }
 

@@ -28,8 +28,7 @@ int	main(void)
 			{
 				std::stringstream	line;
 				std::cout << book;
-				std::cout << "Input index people:" << std::endl;
-				std::getline(std::cin, keyWord);
+				outputMsgAndWaitInput(std::cin, "Input index people:", keyWord);
 				line << keyWord;
 				line >> number;
 				if (line.fail() || !line.eof())
