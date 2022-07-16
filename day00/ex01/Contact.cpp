@@ -29,11 +29,11 @@ static void	outputMsgAndWaitInput(std::istream &in, const std::string &str, std:
 
 std::istream &operator>>(std::istream &in, Contact &value)
 {
-	outputMsgAndWaitInput(in, "First name: ", value.firstName);
-	outputMsgAndWaitInput(in, "Last name: ", value.lastName);
-	outputMsgAndWaitInput(in, "Nickname: ", value.nickname);
-	outputMsgAndWaitInput(in, "Phone number: ", value.phoneNumber);
-	outputMsgAndWaitInput(in, "Secret: ", value.darkestSecret);
+	outputMsgAndWaitInput(in, "First name:\n", value.firstName);
+	outputMsgAndWaitInput(in, "Last name:\n", value.lastName);
+	outputMsgAndWaitInput(in, "Nickname:\n", value.nickname);
+	outputMsgAndWaitInput(in, "Phone number:\n", value.phoneNumber);
+	outputMsgAndWaitInput(in, "Secret:\n", value.darkestSecret);
 	return (in);
 }
 

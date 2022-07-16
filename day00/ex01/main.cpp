@@ -16,6 +16,7 @@ int	main(void)
 	{
 		try
 		{
+			std::cout << "Input command:" << std::endl;
 			std::cin >> keyWord;
 			std::cin.ignore();
 			if (keyWord == "ADD")
@@ -27,7 +28,7 @@ int	main(void)
 			{
 				std::stringstream	line;
 				std::cout << book;
-				std::cout << "Input index people: ";
+				std::cout << "Input index people:" << std::endl;
 				std::getline(std::cin, keyWord);
 				line << keyWord;
 				line >> number;
@@ -42,6 +43,7 @@ int	main(void)
 		{
 			std::cerr << e.what() << std::endl;
 		}
+
 	}
 	return (0);
 }
