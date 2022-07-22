@@ -9,7 +9,7 @@ SRC		=	main		\
 OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
-NAME	=	account
+NAME	=	zombie
 
 .PHONY:	all clean fclean re
 
@@ -28,7 +28,7 @@ re: fclean all
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(OBJ_DIR)/%.o:	%.cpp
+$(OBJ_DIR)/%.o:	%.cpp Makefile
 	$(CC) $(CFLAGS) $< -c -o $@
 
 $(NAME):	$(OBJ)
