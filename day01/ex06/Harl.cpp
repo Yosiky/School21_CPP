@@ -2,14 +2,18 @@
 
 Harl::Harl(const std::string &str)
 {
-    minimum = hash(str);
+    unsigned char           minimum = hash(str);
+
     for (int i = 0; i < CRINGE_BUFFER_SIZE; ++i)
         funcs[i] = something;
-    funcs[hash("debug")] = debug;
-    funcs[hash("info")] = info;
-    funcs[hash("warning")] = warning;
-    funcs[hash("error")] = error;
-
+    switch (minimum)
+    {
+        case (44): funcs[44] = debug;
+        case (220): funcs[220] = info;
+        case (247): funcs[247] = warning;
+        case (141): funcs[141] = error; break;
+        default:    std::cerr << "Error: invalid argument" << std::endl; break;
+    }
 }
 
 void    Harl::debug(void)
@@ -72,15 +76,5 @@ unsigned char   Harl::hash(const std::string &str)
 
 void    Harl::complain(std::string level)
 {
-    static unsigned char    deb = hash("debug");
-    static unsigned char    inf = hash("info");
-    static unsigned char    war = hash("warning");
-    static unsigned char    err = hash("error");
-
-    std::cout << static_cast<int>(deb) << std::endl
-            << static_cast<int>(inf) << std::endl
-            << static_cast<int>(war) << std::endl
-            << static_cast<int>(err) << std::endl;
-
     funcs[hash(level)]();
 }

@@ -16,7 +16,6 @@ private:
     static void     error(void);
     unsigned char   hash(const std::string &str);
     static void     something(void);
-    unsigned char   minimum;
 public:
     
     Harl(const std::string &str);

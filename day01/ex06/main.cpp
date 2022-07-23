@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "ERROR: valid argument" << std::endl;
+        std::cerr << "ERROR: invalid argument" << std::endl;
         return 1;
     }
     for (size_t i = 0; argv[1][i]; ++i)
@@ -14,9 +14,9 @@ int main(int argc, char **argv)
     Harl    man((std::string(argv[1])));
 
     man.complain("debug");
-    man.complain("error");
     man.complain("info");
     man.complain("warning");
+    man.complain("error");
     man.complain("asdf");
     man.complain("");
     return (0);
