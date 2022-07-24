@@ -5,13 +5,13 @@ Harl::Harl(const std::string &str)
     unsigned char           minimum = hash(str);
 
     for (int i = 0; i < CRINGE_BUFFER_SIZE; ++i)
-        funcs[i] = something;
+        funcs[i] = &Harl::something;
     switch (minimum)
     {
-        case (44): funcs[44] = debug;
-        case (220): funcs[220] = info;
-        case (247): funcs[247] = warning;
-        case (141): funcs[141] = error; break;
+        case (44): funcs[44] = &Harl::debug;
+        case (220): funcs[220] = &Harl::info;
+        case (247): funcs[247] = &Harl::warning;
+        case (141): funcs[141] = &Harl::error; break;
         default:    std::cerr << "Error: invalid argument" << std::endl; break;
     }
 }
@@ -76,5 +76,5 @@ unsigned char   Harl::hash(const std::string &str)
 
 void    Harl::complain(std::string level)
 {
-    funcs[hash(level)]();
+    (this->*funcs[hash(level)])();
 }
