@@ -66,13 +66,7 @@ int Fixed::toInt(void) const
 
 std::ostream &operator<<(std::ostream& out, const Fixed &value)
 {
-    int num = (value.getRawBits());
-    int main_parth = num >> WIDTH_FLOAT_PARTH;
-    int prec_parth = num & BIN_WIDTH_FLOAT_PARTH;
-
-    out << main_parth;
-    if (prec_parth)
-        std::cout << '.' << (main_parth < 0 ? 100 - prec_parth : prec_parth);
+    std::cout << value.toFloat();
     return out;
 }
 
