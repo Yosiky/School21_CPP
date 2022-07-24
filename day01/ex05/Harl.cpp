@@ -8,7 +8,6 @@ Harl::Harl(void)
     funcs[hash("info")] = info;
     funcs[hash("warning")] = warning;
     funcs[hash("error")] = error;
-
 }
 
 void    Harl::debug(void)
