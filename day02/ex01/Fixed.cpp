@@ -18,18 +18,12 @@ Fixed::Fixed(const int val)
 Fixed::Fixed(const float val)
 {
     std::cout << "Float constructor called" << std::endl;
-    float   res = val - roundf(val);
+    float   res = val - (val < 0 ? ceilf(val) : floorf(val));
 
     value = 0;
     value = static_cast<int>(val) << WIDTH_FLOAT_PARTH;
-    std::cout << "\nval = " << val;
-    if (res < 0)
-        res += 1;
-    std::cout << "\nfloat = " << res << std::endl;
-    res *= 100;
-    std::cout << "\nfloat = " << res << std::endl;
-    std::cout << "\nnum = " << static_cast<int>(res) << std::endl;
-    value += static_cast<int>(res);
+    res = roundf(res * 100);
+    value += static_cast<int>(res) & BIN_WIDTH_FLOAT_PARTH;
 }
 
 Fixed::Fixed(const Fixed &obj)
@@ -62,8 +56,7 @@ void    Fixed::setRawBits(int const raw)
 
 float   Fixed::toFloat(void) const
 {
-    std::cout << (value >> WIDTH_FLOAT_PARTH) << ' ' << std::cout << (value % 1024) << std::endl; 
-    return static_cast<float>(value >> WIDTH_FLOAT_PARTH) + static_cast<float>(value % 1024);
+    return static_cast<float>(value >> WIDTH_FLOAT_PARTH) + static_cast<float>(value & BIN_WIDTH_FLOAT_PARTH) / 100;
 }
 
 int Fixed::toInt(void) const
@@ -74,7 +67,7 @@ int Fixed::toInt(void) const
 std::ostream &operator<<(std::ostream& out, const Fixed &value)
 {
     int num = value.getRawBits();
-    out << (num >> WIDTH_FLOAT_PARTH) << '.' << (num & 0xFF);
+    out << (num >> WIDTH_FLOAT_PARTH) << '.' << (num & BIN_WIDTH_FLOAT_PARTH);
     return out;
 }
 

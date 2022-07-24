@@ -2,6 +2,7 @@
 # define FIXED_HPP
 
 # define WIDTH_FLOAT_PARTH 8
+# define BIN_WIDTH_FLOAT_PARTH 0xff
 
 # include <iostream>
 # include <cmath>
