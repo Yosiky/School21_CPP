@@ -70,9 +70,9 @@ std::ostream &operator<<(std::ostream& out, const Fixed &value)
     int main_parth = num >> WIDTH_FLOAT_PARTH;
     int prec_parth = num & BIN_WIDTH_FLOAT_PARTH;
 
-    out << main_parth << '.';
+    out << main_parth;
     if (prec_parth)
-        std::cout << (main_parth < 0 ? 100 - prec_parth : prec_parth);
+        std::cout << '.' << (main_parth < 0 ? 100 - prec_parth : prec_parth);
     return out;
 }
 
