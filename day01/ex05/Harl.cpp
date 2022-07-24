@@ -3,11 +3,11 @@
 Harl::Harl(void)
 {
     for (int i = 0; i < CRINGE_BUFFER_SIZE; ++i)
-        funcs[i] = something;
-    funcs[hash("debug")] = debug;
-    funcs[hash("info")] = info;
-    funcs[hash("warning")] = warning;
-    funcs[hash("error")] = error;
+        funcs[i] = &Harl::something;
+    funcs[hash("debug")] = &Harl::debug;
+    funcs[hash("info")] = &Harl::info;
+    funcs[hash("warning")] = &Harl::warning;
+    funcs[hash("error")] = &Harl::error;
 }
 
 void    Harl::debug(void)
@@ -66,5 +66,5 @@ unsigned char   Harl::hash(const std::string &str)
 
 void    Harl::complain(std::string level)
 {
-    funcs[hash(level)]();
+    (this->*funcs[hash(level)])();
 }
