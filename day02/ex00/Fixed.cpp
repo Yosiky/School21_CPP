@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+int Fixed::widthFloatParth = WIDTH_FLOAT_PARTH;
+
 Fixed::Fixed(void)
 : value(0)
 {
