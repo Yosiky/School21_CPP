@@ -74,13 +74,13 @@ bool    Fixed::operator!=(const Fixed &obj) const
 
 Fixed   &Fixed::operator++(void)
 {
-    value += 1 << WIDTH_FLOAT_PARTH;
+    ++value;
     return *this;
 }
 
 Fixed   &Fixed::operator--(void)
 {
-    value -= 1 << WIDTH_FLOAT_PARTH;
+    --value;
     return *this;
 }
 
@@ -88,7 +88,7 @@ Fixed   Fixed::operator++(int)
 {
     Fixed   res = *this;
 
-    value += 1 << WIDTH_FLOAT_PARTH;
+    ++value;
     return res;
 }
 
@@ -96,15 +96,14 @@ Fixed   Fixed::operator--(int)
 {
     Fixed   res = *this;
 
-    value -= 1 << WIDTH_FLOAT_PARTH;
+    --value;
     return res;
 }
 
 Fixed   Fixed::operator*(const Fixed &obj) const
 {
-    Fixed   res;
-    
-    res.value = value * obj.value;
+    Fixed   res(this->toFloat() * obj.toFloat());
+
     return res;
 }
 
