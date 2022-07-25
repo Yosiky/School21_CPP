@@ -102,9 +102,22 @@ Fixed   Fixed::operator--(int)
 
 Fixed   Fixed::operator*(const Fixed &obj) const
 {
-    Fixed   res(this->toFloat() * obj.toFloat());
+    return Fixed(this->toFloat() * obj.toFloat());
+}
 
-    return res;
+Fixed   Fixed::operator+(const Fixed &obj) const
+{
+   return Fixed(this->toFloat() + obj.toFloat());
+}
+
+Fixed   Fixed::operator-(const Fixed &obj) const
+{
+    return Fixed(this->toFloat() - obj.toFloat());
+}
+
+Fixed   Fixed::operator/(const Fixed &obj) const
+{
+    return Fixed(this->toFloat() / obj.toFloat());
 }
 
 int     Fixed::getRawBits(void) const

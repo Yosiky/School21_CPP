@@ -32,6 +32,9 @@ public:
     Fixed   operator++(int);
     Fixed   operator--(int);
     Fixed   operator*(const Fixed &obj) const;
+    Fixed   operator+(const Fixed &obj) const;
+    Fixed   operator-(const Fixed &obj) const;
+    Fixed   operator/(const Fixed &obj) const;
 
     int     getRawBits(void) const;
     void    setRawBits(int const raw);
