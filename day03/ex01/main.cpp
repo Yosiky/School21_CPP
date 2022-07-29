@@ -1,17 +1,16 @@
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap    dev("Devid");
-    ClapTrap    jen("Jenya");
-    ClapTrap    kos("Kostya");
+    ScavTrap    dev("Devid");
+    ScavTrap    jen("Jenya");
+    ScavTrap    kos("Kostya");
 
+    for (int i = 0; i < 51; ++i)
+        dev.beRepaired(10);
     for (int i = 0; i < 11; ++i)
-        dev.beRepaired(1);
-    for (int i = 0; i < 6; ++i)
-        jen.takeDamage(2);
+        jen.takeDamage(10);
     kos.attack("Jenya");
-
     return 0;
 }

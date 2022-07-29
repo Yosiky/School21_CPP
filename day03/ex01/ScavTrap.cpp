@@ -16,13 +16,22 @@ ScavTrap::ScavTrap(const std::string &_name)
     hitPoint = 100;
     energy = 50;
     damage = 20;
+    std::cout << isName() + " " << name << " is create" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
-{ }
+{
+    std::cout << isName() << " " << name << " is destroy" << std::endl;
+}
 
 ScavTrap    &ScavTrap::operator=(const ScavTrap &obj)
 {
     ClapTrap::operator=(obj);
+    std::cout << isName() + " " << obj.name << " is copy" << std::endl;
     return *this;
+}
+
+void    ScavTrap::guardGate(void)
+{
+    std::cout << isName() + " is now in Gate keeper mode" << std::endl;
 }

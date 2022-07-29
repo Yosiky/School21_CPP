@@ -16,6 +16,8 @@ public:
     ~ScavTrap(void);
 
     ScavTrap    &operator=(const ScavTrap &obj);
+    
+    void    guardGate(void);
 };
 
 #endif //SCAVTRAP_HPP

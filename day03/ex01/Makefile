@@ -13,7 +13,7 @@ HEADER		=	ClapTrap.hpp	\
 				ScavTrap.hpp
 
 
-NAME		=	clapTrap
+NAME		=	scavTrap
 
 .PHONY:	all clean fclean re
 
