@@ -2,13 +2,16 @@ CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -pedantic-errors -Wctor-dtor-privacy -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wfloat-equal -Wshadow -Wcast-qual -Wconversion -Wzero-as-null-pointer-constant -Wextra-semi -Wsign-conversion -std=c++98
 
 SRC		=	main		\
-			Fixed
+			Fixed		\
+			Point		\
+			bsp
 
 OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
 HEADER_DIR	=	.
-HEADER		=	Fixed.hpp
+HEADER		=	Fixed.hpp	\
+				Point.hpp
 
 
 NAME	=	fixedNumber

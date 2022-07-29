@@ -19,7 +19,7 @@ public:
     Point   operator+(const Point &obj) const;
     Point   operator-(const Point &obj) const;
 
-    int checkLine(const Point &a, const Point &b, const Point &c) const;
+    float   checkLine(const Point &a, const Point &b) const;
 };
 
 #endif //POINT_HPP
