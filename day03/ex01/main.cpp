@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    ClapTrap    *les = new ScavTrap("Lesha");
     ScavTrap    dev("Devid");
     ScavTrap    jen("Jenya");
     ScavTrap    kos("Kostya");
@@ -12,5 +13,6 @@ int main(void)
     for (int i = 0; i < 11; ++i)
         jen.takeDamage(10);
     kos.attack("Jenya");
+    delete les;
     return 0;
 }
