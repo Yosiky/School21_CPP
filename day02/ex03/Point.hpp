@@ -19,7 +19,7 @@ public:
     Point   operator+(const Point &obj) const;
     Point   operator-(const Point &obj) const;
 
-    bool    checkLine(const Point &a, const Point &b, const Point &c) const;
+    int checkLine(const Point &a, const Point &b, const Point &c) const;
 };
 
 #endif //POINT_HPP
