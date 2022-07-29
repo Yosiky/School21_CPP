@@ -17,7 +17,7 @@ HEADER		=	ClapTrap.hpp	\
 				DiamondTrap.hpp
 
 
-NAME		=	fragTrap
+NAME		=	diamondTrap
 
 .PHONY:	all clean fclean re
 

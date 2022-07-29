@@ -1,12 +1,12 @@
 #include <iostream>
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-    ClapTrap    *les = new FragTrap("Lesha");
-    FragTrap    dev("Devid");
-    FragTrap    jen("Jenya");
-    FragTrap    kos("Kostya");
+    ClapTrap    *les = new DiamondTrap("Lesha");
+    DiamondTrap    dev("Devid");
+    DiamondTrap    jen("Jenya");
+    DiamondTrap    kos("Kostya");
 
     for (int i = 0; i < 101; ++i)
         dev.beRepaired(10);

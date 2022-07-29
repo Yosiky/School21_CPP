@@ -23,8 +23,8 @@ public:
 
     DiamondTrap &operator=(const DiamondTrap &obj);
         
-    
-
+    void    whoAmI(void);
+    void    attack(const std::string &target);
 };
 
 #endif //DIAMONDTRAP_HPP
