@@ -15,7 +15,7 @@ HEADER		=	ClapTrap.hpp	\
 				FragTrap.hpp
 
 
-NAME		=	scavTrap
+NAME		=	fragTrap
 
 .PHONY:	all clean fclean re
 
