@@ -1,5 +1,8 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void)
+{ }
+
 const std::string   ScavTrap::isName(void)
 {
     return "ScavTrap";
@@ -27,7 +30,6 @@ ScavTrap::~ScavTrap(void)
 ScavTrap    &ScavTrap::operator=(const ScavTrap &obj)
 {
     ClapTrap::operator=(obj);
-    std::cout << isName() + " " << obj.name << " is copy" << std::endl;
     return *this;
 }
 
