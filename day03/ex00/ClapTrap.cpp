@@ -1,5 +1,9 @@
 #include "ClapTrap.hpp"
 
+
+ClapTrap::ClapTrap(void)
+{ }
+
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
     *this = obj;

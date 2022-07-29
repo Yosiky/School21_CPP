@@ -12,6 +12,8 @@ private:
     int         energy;
     int         damage;
 
+    ClapTrap(void);
+
 public:
     ClapTrap(const ClapTrap &obj);
     ClapTrap(const std::string &_name);
