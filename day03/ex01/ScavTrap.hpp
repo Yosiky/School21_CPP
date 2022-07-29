@@ -8,6 +8,7 @@
 class   ScavTrap : public ClapTrap
 {
 protected:
+    ScavTrap(void);
     virtual const std::string   isName(void);
 
 public:

@@ -1,5 +1,8 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void)
+{ }
+
 const std::string   ScavTrap::isName(void)
 {
     return "ScavTrap";
