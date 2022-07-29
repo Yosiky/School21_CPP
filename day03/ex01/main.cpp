@@ -13,6 +13,7 @@ int main(void)
     for (int i = 0; i < 11; ++i)
         jen.takeDamage(10);
     kos.attack("Jenya");
+    jen = kos;
     delete les;
     return 0;
 }

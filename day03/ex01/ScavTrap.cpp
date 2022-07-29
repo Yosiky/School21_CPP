@@ -30,7 +30,6 @@ ScavTrap::~ScavTrap(void)
 ScavTrap    &ScavTrap::operator=(const ScavTrap &obj)
 {
     ClapTrap::operator=(obj);
-    std::cout << isName() + " " << obj.name << " is copy" << std::endl;
     return *this;
 }
 
