@@ -19,7 +19,7 @@ public:
 
     virtual void    makeSound(void) const;
     
-    std::string &getType(void) const;
+    std::string &getType(void);
 }
 
 #endif //ANIMAL_HPP
