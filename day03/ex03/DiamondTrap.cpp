@@ -14,10 +14,12 @@ DiamondTrap::DiamondTrap(const DiamondTrap &obj)
 }
 
 DiamondTrap::DiamondTrap(const std::string &_name)
-: FragTrap(_name + "_clap_trap"), name(_name)
+: ClapTrap(_name + "_clap_trap"), name(_name)
 {
+    hitPoint = 100;
     energy = 50;
-    std::cout << isName() + " " << name << " is create" << std::endl;
+    damage = 30;
+    std::cout << isName() + " " << DiamondTrap::name << " is create" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -35,4 +37,10 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &obj)
 void    DiamondTrap::attack(const std::string &target)
 {
     ScavTrap::attack(target);
+}
+
+void    DiamondTrap::whoAmI(void)
+{
+    std::cout << isName() + " " + name << std::endl;
+    std::cout << ClapTrap::isName() + " " + ClapTrap::name << std::endl;
 }
