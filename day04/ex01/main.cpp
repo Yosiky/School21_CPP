@@ -66,6 +66,9 @@ void    testFour(void)
     Dog     b;
     Animal  *a = &b;
     std::cout << a->getType() << std::endl;
+    b.setIdea(0, "I'm dog?");
+    Dog     c = b;
+    std::cout << c.getIdea(0) << std::endl;
     FINISH_TEST(4);
 }
 

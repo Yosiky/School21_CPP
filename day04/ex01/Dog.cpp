@@ -9,6 +9,7 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog &obj)
 {
+    brain = NULL;
     *this = obj;
 }
 
@@ -21,7 +22,9 @@ Dog::~Dog(void)
 Dog &Dog::operator=(const Dog &obj)
 {
     Animal::operator=(obj);
-    brain = obj.brain;
+    if (brain == NULL)
+        brain = new Brain();
+    *brain = *(obj.brain);
     return *this;
 }
 
