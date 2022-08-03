@@ -9,6 +9,7 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat &obj)
 {
+    brain = NULL;
     *this = obj;
 }
 
@@ -21,6 +22,8 @@ Cat::~Cat(void)
 Cat &Cat::operator=(const Cat &obj)
 {
     Animal::operator=(obj);
+    if (brain == NULL)
+        brain = new Brain();
     *brain = *(obj.brain);
     return *this;
 }
