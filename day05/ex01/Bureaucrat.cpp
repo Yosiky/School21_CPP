@@ -2,18 +2,12 @@
 
 const char  *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "Grade equal 1";
+    return "Max grade equal 1";
 }
 
 const char  *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "Grade equal 150";
-}
-
-
-Bureaucrat::Bureaucrat(void)
-{
-    std::cout << "Bureaucrat was created" << std::endl;
+    return "Min grade equal 150";
 }
 
 Bureaucrat::Bureaucrat(const std::string &str, int grd)
@@ -39,12 +33,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj)
 Bureaucrat::~Bureaucrat(void)
 {
     std::cout << "Bureaucrat was destroied" << std::endl;
-}
-                                               
-Bureaucrat  &Bureaucrat::operator=(__attribute__((unused))const Bureaucrat &obj)
-{
-    std::cout << "Bureaucrat operator=" << std::endl;
-    return *this;
 }
                                                
 const std::string   &Bureaucrat::getName(void) const
@@ -77,4 +65,17 @@ std::ostream    &operator<<(std::ostream &out, const Bureaucrat &obj)
 {
     out << obj.getName() + ", bureaucrat grade " << obj.getGrade();
     return out;
+}
+
+void    Bureaucrat::signForm(Form &form) const
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << name + " signed " + form.getName() << std::endl;
+    }
+    catch (std::exception &a)
+    {
+        std::cout << a.what() << std::endl;
+    }
 }
