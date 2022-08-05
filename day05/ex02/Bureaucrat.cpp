@@ -90,7 +90,7 @@ void    Bureaucrat::executeForm(const Form &form)
     try
     {
         form.execute(*this);
-        std::cout << name + " execute form (" + form.getName() + ")" << std::endl;
+        std::cout << name + " execute form with target " + form.getTarget() << std::endl;
     }
     catch (std::exception &a)
     {

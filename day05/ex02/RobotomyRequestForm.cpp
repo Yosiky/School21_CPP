@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-: Form(target, 72, 45)
+: Form("RobotomyRequestForm", target, 72, 45)
 {
     srand(static_cast<unsigned int>(time(0)));
     std::cout << "RobotomyRequestForm was created" << std::endl;
