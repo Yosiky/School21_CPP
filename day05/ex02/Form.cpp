@@ -69,10 +69,7 @@ void    Form::beSigned(const Bureaucrat &obj)
 {
     if (obj.getGrade() > gradeSign)
         throw Form::GradeTooLowException(obj.getName() + " couldn't sign " + name);
-    if (sign)
-        std::cout << "The form has already been confirmed" << std::endl;
-    else
-        sign = true;
+    sign = true;
 }
 
 const std::string   &Form::getName(void) const

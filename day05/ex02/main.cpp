@@ -79,7 +79,10 @@ void    testThree(void)
     for (int i = 0; i < 6; ++i)
     {
         for (int j = 0; j < 3; ++j)
+        {
+            bureaucrat[i]->signForm(*arr[j]);
             bureaucrat[i]->executeForm(*arr[j]);
+        }
     }
     for (int i = 0; i < 6; ++i)
         delete bureaucrat[i];
