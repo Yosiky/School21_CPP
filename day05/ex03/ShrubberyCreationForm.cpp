@@ -20,7 +20,7 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &obj) const
     }
     else
         throw SignException();
-    std::ofstream    file(getName() + "_shrubbery");
+    std::ofstream    file(std::string(getName() + "_shrubbery").c_str());
     if (!file.is_open())
         throw ExecuteException(getName() + "_shrubbery don't open");
     file << (
