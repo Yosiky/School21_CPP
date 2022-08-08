@@ -16,8 +16,11 @@ Form    *Intern::makeForm(__attribute__((unused))const std::string &form, __attr
     switch (hash(form))
     {
         case hashPardon : pForm = new PresidentialPardonForm(nameForm);
+            break ;
         case hashRobotomy : pForm = new RobotomyRequestForm(nameForm);
+            break ;
         case hashCreation : pForm = new ShrubberyCreationForm(nameForm);
+            break ;
         default: return NULL;
     }
     std::cout << "Intern creates " << pForm->getName() << std::endl;

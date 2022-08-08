@@ -101,7 +101,7 @@ int main(void)
         Intern  a;
         Form *b = a.makeForm("robotomy request", "Bender");
 
-        std::cout << b->getName() << " " << b->getTarget() << std::endl;
+        std::cout << "Form: " << b->getName() << std::endl << "Target: " << b->getTarget() << std::endl;
         delete b;
     }
    catch (std::exception &a)
