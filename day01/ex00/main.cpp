@@ -5,6 +5,7 @@ int	main(void)
 {
 	Zombie	a("Jenya");
 	Zombie	*b = newZombie("Lesha");
+	
 	randomChump("Kostya");
 	b->announce();
 	a.announce();

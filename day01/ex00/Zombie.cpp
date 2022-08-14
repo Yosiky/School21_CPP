@@ -1,15 +1,9 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie()
-{ }
-
 Zombie::Zombie(const std::string &_name)
 :name(_name)
-{ }
-
-Zombie::Zombie(const Zombie &value)
 {
-	*this = value;
+	std::cout << "Zombie " << name << " was created" << std::endl;
 }
 
 Zombie::~Zombie(void)
@@ -17,9 +11,10 @@ Zombie::~Zombie(void)
 	std::cout << name << ": destroy" << std::endl;
 }
 
-Zombie	&Zombie::operator=(const Zombie& value)
+Zombie	&Zombie::operator=(const Zombie &obj)
 {
-	name = value.name;
+	std::cout << "Zombie was copied" << std::endl;
+	name = obj.name;
 	return *this;
 }
 
