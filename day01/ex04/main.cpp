@@ -5,7 +5,6 @@ void    copy(std::ifstream &in, std::ofstream &out, std::string &s1, std::string
 {
     size_t      pos;
     size_t      left;
-    const char  *str;
     std::string value;
 
     while (!in.eof())
@@ -13,7 +12,6 @@ void    copy(std::ifstream &in, std::ofstream &out, std::string &s1, std::string
         left = 0;
         pos = std::string::npos;
         std::getline(in, value);
-        str = value.c_str();
         pos = value.find(s1, left);
         while (pos != std::string::npos)
         {
@@ -47,8 +45,8 @@ int main(int argc, char **argv)
         return error("Error: size string s1 is 0", 3); 
     else
     {
-        std::ifstream   input(fileName);
-        std::ofstream   output(fileName + ".replace");
+        std::ifstream   input(fileName.c_str());
+        std::ofstream   output((fileName + ".replace").c_str());
         int             flag = (input.is_open() << 1) + (output.is_open());
         if (flag == 3)
             copy(input, output, s1, s2);
