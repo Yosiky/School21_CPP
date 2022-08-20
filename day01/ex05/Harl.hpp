@@ -16,9 +16,13 @@ private:
     void     error(void);
     unsigned char   hash(const std::string &str);
     void     something(void);
+
+    Harl(const Harl &obj);
+    Harl    &operator=(const Harl &obj);
 public:
     
     Harl(void);
+    ~Harl(void);
 
     void    complain(std::string level);
 

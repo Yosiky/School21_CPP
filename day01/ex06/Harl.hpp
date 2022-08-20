@@ -10,12 +10,12 @@ class Harl
 {
 private:
     void    (Harl::*funcs[CRINGE_BUFFER_SIZE])();
-    void     debug(void);
-    void     info(void);
-    void     warning(void);
-    void     error(void);
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
     unsigned char   hash(const std::string &str);
-    void     something(void);
+    void    something(void);
 public:
     
     Harl(const std::string &str);

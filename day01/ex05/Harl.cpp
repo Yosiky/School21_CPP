@@ -2,12 +2,18 @@
 
 Harl::Harl(void)
 {
+    std::cout << "Harl was created" << std::endl;
     for (int i = 0; i < CRINGE_BUFFER_SIZE; ++i)
         funcs[i] = &Harl::something;
     funcs[hash("debug")] = &Harl::debug;
     funcs[hash("info")] = &Harl::info;
     funcs[hash("warning")] = &Harl::warning;
     funcs[hash("error")] = &Harl::error;
+}
+
+Harl::~Harl(void)
+{
+    std::cout << "Harl was destroied" << std::endl;
 }
 
 void    Harl::debug(void)

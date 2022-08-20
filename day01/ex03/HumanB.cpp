@@ -2,7 +2,14 @@
 
 HumanB::HumanB(const std::string &_name)
 : weapon(NULL), name(_name)
-{ }
+{
+    std::cout << "HumanB was created" << std::endl;
+}
+
+HumanB::~HumanB(void)
+{
+    std::cout << "HumanB was destroied" << std::endl;
+}
 
 void    HumanB::attack(void)
 {
