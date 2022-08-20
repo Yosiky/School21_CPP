@@ -1,15 +1,17 @@
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <string>
+#include <cstdlib>
+#include <climits>
 
 int main(int argc, char **argv)
 {
     if (argc == 2)
     {
+        char    *pErr;
+        double  dValue = strtod(argv[1], &pErr);
         std::string word(argv[1]);
-        std::stringstream line(argv[1]);
-        double  dValue;
-        line >> dValue;
 
         if (word == "nan")
         {
@@ -18,17 +20,20 @@ int main(int argc, char **argv)
             std::cout << "float: nanf" << std::endl; 
             std::cout << "double: nan" << std::endl; 
         }
-        else if (word == "0")
+        else 
         {
-            std::cout << "char: Nan displayble" << std::endl;
-            std::cout << "int: 0" << std::endl;
-            std::cout << "float: 0.0f" << std::endl;
-            std::cout << "double: 0.0" << std::endl;
-        }
-        else
-        {
-            std::cout << "char: '" << static_cast<char>(dValue) << "'" << std::endl;
-            std::cout << "int: " << static_cast<int>(dValue) << std::endl; 
+            std::cout.precision(1);
+            std::cout.setf(std::ios_base::fixed);
+            if (dValue > CHAR_MAX || dValue < 0)
+                std::cout << "char: impossible" << std::endl;
+            else if (isprint(static_cast<char>(dValue)))
+                std::cout << "char: '" << static_cast<char>(dValue) << "'" << std::endl;
+            else
+                std::cout << "char: Non displayable" << std::endl;
+            if (dValue > INT_MAX || dValue < INT_MIN)
+                std::cout << "int: impossible" << std::endl; 
+            else
+                std::cout << "int: " << static_cast<int>(dValue) << std::endl; 
             std::cout << "float: " << static_cast<float>(dValue) << "f" << std::endl;
             std::cout << "double: " << dValue << std::endl;
         }
