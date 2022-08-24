@@ -7,9 +7,9 @@ OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
 HEADER_DIR	=	.
-HEADER		=	.
+HEADER		=	whatever.hpp
 
-NAME		=	convert
+NAME		=	something
 
 .PHONY:	all clean fclean re
 
@@ -29,7 +29,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)/%.o:	%.cpp Makefile
-	$(CC) $(CFLAGS) $< -c -o $@ 
+	$(CC) $(CFLAGS) -I$(HEADER) $< -c -o $@ 
 
 $(NAME):	$(OBJ) $(HEADER_DIR)/$(HEADER)
-	$(CC) $(OBJ) -o $@
+	$(CC) -I$(HEADER) $(OBJ) -o $@
