@@ -18,7 +18,10 @@ Array<T>::Array(uint n)
 template <class T>
 Array<T>::Array(const Array<T> &obj)
 {
-    *this = obj;
+    count = obj.count;
+    arr = new T[count];
+    for (uint i = 0; i < count; ++i)
+        arr[i] = obj.arr[i];
 }
 
 template <class T>
