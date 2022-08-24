@@ -33,28 +33,28 @@ void    indetify(Base *p)
 
 void    indetify(Base &p)
 {
-    static const char   str[4] = "ABC";
-    int i = 0;
-
     std::cout << "class ";
-    while (i < 3)
+    try
     {
-        try
-        {
-            switch (i)
-            {
-                case 0: dynamic_cast<A &>(p); break;
-                case 1: dynamic_cast<B &>(p); break;
-                case 2: dynamic_cast<C &>(p); break;
-            }
-            std::cout << str[i] << std::endl;
-            return ;
-        }
-        catch (std::exception &a)
-        {
-            ++i;
-        }
+        dynamic_cast<A &>(p);
+        std::cout << "A" << std::endl;
+        return ;
     }
+    catch (std::exception &a) { }
+    try
+    {
+        dynamic_cast<B &>(p);
+        std::cout << "B" << std::endl;
+        return ;
+    }
+    catch (std::exception &a) { }
+    try
+    {
+        dynamic_cast<C &>(p);
+        std::cout << "C" << std::endl;
+        return ;
+    }
+    catch (std::exception &a) { }
 }
 
 int main(void)
