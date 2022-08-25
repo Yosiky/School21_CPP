@@ -88,5 +88,5 @@ const char  *Span::SpanException::what(void) const throw()
     return str.c_str();
 }
 
-Span::SpanException::~SpanException(void) _NOEXCEPT
+Span::SpanException::~SpanException(void) throw()
 { }

@@ -23,7 +23,7 @@ public:
     public:
         SpanException(const std::string &s);
         virtual const char* what() const throw();
-        ~SpanException(void) _NOEXCEPT;
+        virtual ~SpanException(void) throw();
     };
 
     Span(uint n);
