@@ -1,15 +1,11 @@
 
-template <class T>
-MutantStack<T>::MutantStack(void)
-: stack()
-{ }
+template <class T, class Container = std::deque<T> >
+typename MutantStack<T, Container>::iterator    MutantStack<T, Container>::begin(void)
+{
+    return std::begin(c);
+}
 
-template <class T>
-MutantStack<T>::MutantStack(const MutantStack &obj)
-: stack(obj)
-{ }
-
-template <class T>
-MutantStack<T>::~MutantStack(void)
-: ~stack()
-{ }
+iterator  &end(void)
+{
+    return std::end(c);
+}

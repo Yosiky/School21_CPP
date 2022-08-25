@@ -1,20 +1,30 @@
-#ifdef MUTANTSTACK_HPP
+#ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <deque>
+# include <iterator>
 
-template <class T>
-class   MutantStack : public std::stack<T>
+template <class T, class Container = std::deque<T> >
+class   MutantStack : public std::stack<T, Container>
 {
-
 public:
-    MutantStack(void);
-    MutantStack(const MutantStack &obj);
-    virtual ~MutantStack(void);
+    using   std::stack<T, Container>::c;
+    typedef typename std::stack<T, Container>::container_type::iterator reverse_iterator;
+    typedef typename std::stack<T, Container>::container_type::reverse_iterator iterator;
+    //MutantStack<T> &operator=(const MutantStack<T> &obj);
 
-    MutantStack<T> &operator=(const MutantStack<T> &obj);
-}
+    iterator   begin(void)
+    {
+        return c.rbegin();
+    }
 
-# include "MutantStack.tpp"
+    iterator  end(void)
+    {
+        return c.rend();
+    }
+};
+
+//# include "MutantStack.tpp"
 
 #endif
