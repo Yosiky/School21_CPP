@@ -1,7 +1,7 @@
 #include "Span.hpp"
 
 Span::Span(uint n)
-: arr(n), end(0)
+: arr(n, 0), end(0)
 { }
 
 Span::Span(const Span &obj)
@@ -26,7 +26,7 @@ void    Span::addNumber(uint newValue)
     arr[end++] = newValue;
 }
 
-void    Span::addArrayNumbers(uint *arr, uint size)
+void    Span::addArrayNumbers(const uint *arr, uint size)
 {
     for (uint i = 0; i < size; ++i)
         addNumber(arr[i]);
@@ -34,7 +34,7 @@ void    Span::addArrayNumbers(uint *arr, uint size)
 
 uint    Span::shortestSpan(void)
 {
-    if (arr.size() < 2)
+    if (end < 2)
         throw Span::SpanException("Error count");
     uint min[2] = { arr[0], arr[1] };
 
@@ -55,7 +55,7 @@ uint    Span::shortestSpan(void)
 
 uint    Span::longestSpan(void)
 {
-    if (arr.size() < 2)
+    if (end < 2)
         throw Span::SpanException("Error count");
     uint mm[2] = { arr[0], arr[1] };
 
@@ -71,6 +71,14 @@ uint    Span::longestSpan(void)
     return mm[1] - mm[0];
 }
 
+void    Span::printArray(void)
+{
+    for (uint i = 0; i < end - 1; ++i)
+        std::cout << arr[i] << ' ';
+    std::cout << arr[end - 1] << std::endl;
+
+}
+
 Span::SpanException::SpanException(const std::string &s)
 : str(s)
 { }
@@ -80,3 +88,5 @@ const char  *Span::SpanException::what(void) const throw()
     return str.c_str();
 }
 
+Span::SpanException::~SpanException(void) _NOEXCEPT
+{ }

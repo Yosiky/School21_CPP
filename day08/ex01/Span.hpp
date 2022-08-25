@@ -5,6 +5,7 @@
 # include <exception>
 # include <string>
 # include <algorithm>
+# include <iostream>
 
 typedef unsigned int    uint;
 
@@ -18,10 +19,11 @@ public:
     
     class   SpanException: public std::exception
     {
-        const std::string   &str;
+        const std::string   str;
     public:
         SpanException(const std::string &s);
         virtual const char* what() const throw();
+        ~SpanException(void) _NOEXCEPT;
     };
 
     Span(uint n);
@@ -31,9 +33,10 @@ public:
     Span    &operator=(const Span &obj);
 
     void    addNumber(uint newValue);
-    void    addArrayNumbers(uint *arr, uint size);
+    void    addArrayNumbers(const uint *arr, uint size);
     uint    shortestSpan(void);
     uint    longestSpan(void);
+    void    printArray(void);
 };
 
 #endif
