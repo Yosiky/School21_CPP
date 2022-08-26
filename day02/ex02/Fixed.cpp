@@ -142,7 +142,7 @@ int Fixed::toInt(void) const
 
 std::ostream &operator<<(std::ostream& out, const Fixed &value)
 {
-    std::cout << value.toFloat();
+    out << value.toFloat();
     return out;
 }
 

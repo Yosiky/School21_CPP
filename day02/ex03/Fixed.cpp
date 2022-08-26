@@ -5,19 +5,19 @@ int Fixed::widthFloatParth = WIDTH_FLOAT_PARTH;
 Fixed::Fixed(void)
 : value(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cerr << "Default constructor called" << std::endl;
 } 
 
 Fixed::Fixed(const int val)
 {
-    std::cout << "Int constructor called" << std::endl;
+    std::cerr << "Int constructor called" << std::endl;
     value = 0;
     value = val << WIDTH_FLOAT_PARTH;
 }
 
 Fixed::Fixed(const float val)
 {
-    std::cout << "Float constructor called" << std::endl;
+    std::cerr << "Float constructor called" << std::endl;
     float   res = val - floorf(val);
 
     value = 0;
@@ -28,18 +28,18 @@ Fixed::Fixed(const float val)
 
 Fixed::Fixed(const Fixed &obj)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cerr << "Copy constructor called" << std::endl;
     *this = obj;
 }
 
 Fixed::~Fixed(void)
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cerr << "Destructor called" << std::endl;
 }
 
 Fixed   &Fixed::operator=(const Fixed &obj)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cerr << "Copy assignment operator called" << std::endl;
     value = obj.value;
     return *this;
 }
@@ -142,7 +142,7 @@ int Fixed::toInt(void) const
 
 std::ostream &operator<<(std::ostream& out, const Fixed &value)
 {
-    std::cout << value.toFloat();
+    out << value.toFloat();
     return out;
 }
 

@@ -2,6 +2,7 @@
 # define POINT_HPP
 
 # include "Fixed.hpp"
+# include <iostream>
 
 class   Point
 {
@@ -20,6 +21,10 @@ public:
     Point   operator-(const Point &obj) const;
 
     float   checkLine(const Point &a, const Point &b) const;
+    const Fixed &getX(void) const;
+    const Fixed &getY(void) const;
 };
+
+std::ostream    &operator<<(std::ostream &out, const Point &obj);
 
 #endif //POINT_HPP

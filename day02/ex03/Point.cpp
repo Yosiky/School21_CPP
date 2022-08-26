@@ -23,8 +23,7 @@ Point   &Point::operator=(const Point &obj)
 
 Point   Point::operator-(const Point &obj) const
 {
-    return Point(x - obj.x, y - obj.y);
-}
+    return Point(x - obj.x, y - obj.y); }
 
 Point   Point::operator+(const Point &obj) const
 {
@@ -36,3 +35,18 @@ float   Point::checkLine(const Point &p1, const Point &p2) const
     return ((p1.x - x) * (p2.y - p1.y) - (p2.x - p1.x) * (p1.y - y)).toFloat();
 }
 
+const Fixed &Point::getX(void) const
+{
+    return x;
+}
+
+const Fixed &Point::getY(void) const
+{
+    return y;
+}
+
+std::ostream    &operator<<(std::ostream &out, const Point &obj)
+{
+    out << obj.getX() << ' ' << obj.getY();
+    return out;
+}
