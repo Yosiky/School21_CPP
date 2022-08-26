@@ -41,6 +41,11 @@ void    ClapTrap::attack(const std::string &target)
         std::cout << isName() << " " << name << " have zero energy" << std::endl;
         return ;
     }
+    if (hitPoint <= 0)
+    {
+        std::cout << isName() << " " << name << " already dead" << std::endl;
+        return ;
+    }
     std::cout << isName() << " " << name << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
     --energy;
 }
