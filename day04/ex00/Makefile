@@ -4,7 +4,9 @@ CFLAGS	=	-Wall -Wextra -Werror -pedantic-errors -Wctor-dtor-privacy -Wnon-virtua
 SRC		=	main		\
 			Dog			\
 			Cat			\
-			Animal
+			Animal		\
+			WrongAnimal	\
+			WrongCat
 
 OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
@@ -12,7 +14,9 @@ OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 HEADER_DIR	=	.
 HEADER		=	Animal.hpp		\
 				Dog.hpp			\
-				Cat.hpp
+				Cat.hpp			\
+				WrongAnimal.hpp	\
+				WrongCat.hpp
 
 NAME		=	animal
 

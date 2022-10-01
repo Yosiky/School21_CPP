@@ -3,9 +3,25 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
 #define START_TEST(num) std::cout << "START TEST: "#num << std::endl;
 #define FINISH_TEST(num) std::cout << "FINISH TEST: "#num << std::endl;
 
+void    testFour(void)
+{
+    START_TEST(4);
+    const WrongAnimal* meta = new WrongAnimal();
+    const WrongAnimal* i = new WrongCat();
+                                                   
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    meta->makeSound();
+    delete meta;
+    delete i;
+    FINISH_TEST(4);
+}
 
 void    testOne(void)
 {
@@ -25,8 +41,7 @@ void    testOne(void)
     FINISH_TEST(1);
 }
 
-void    testTwo(void)
-{
+void    testTwo(void) {
     START_TEST(2);
     Animal  a;
     Dog     b;
@@ -61,5 +76,6 @@ int main()
     testOne();
     testTwo();
     testThree();
+    testFour();
     return 0;
 }
