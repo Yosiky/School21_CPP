@@ -42,3 +42,8 @@ const std::string   &Dog::getIdea(int num) const
     num %= BRAIN_COUNT_IDEAS;
     return brain->ideas[num];
 }
+
+void    Dog::makeSound(void) const
+{
+    std::cout << "Dog sound" << std::endl;
+}

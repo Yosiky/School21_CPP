@@ -21,3 +21,8 @@ Cat &Cat::operator=(const Cat &obj)
     Animal::operator=(obj);
     return *this;
 }
+
+void    Cat::makeSound(void) const
+{
+    std::cout << "Cat sound" << std::endl;
+}

@@ -44,8 +44,11 @@ protected:
         ~ExecuteException(void) throw();
     };
 
+    Form(const std::string &str, const std::string &tar, int grdSign, int grdExec);
+
 private:
     const std::string   name;
+    const std::string   target;
     bool                sign;
     const int           gradeSign;
     const int           gradeExec;
@@ -61,6 +64,7 @@ public:
     virtual void        execute(const Bureaucrat &obj) const = 0;
     void                beSigned(const Bureaucrat &obj);
     const std::string   &getName(void) const;
+    const std::string   &getTarget(void) const;
     bool                getSign(void) const;
     int                 getGradeSign(void) const;
     int                 getGradeExec(void) const;

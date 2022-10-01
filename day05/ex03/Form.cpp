@@ -53,6 +53,19 @@ Form::Form(const std::string &str, int grdSign, int grdExec)
     sign = false;
 }
 
+Form::Form(const std::string &str, const std::string &tar, int grdSign, int grdExec)
+: name(str), target(tar), gradeSign(grdSign), gradeExec(grdExec)
+{
+    int check = (gradeSign < 1 || gradeExec < 1) + (gradeSign > 150 || gradeExec > 150) * 2;
+    
+    if (check & 0x1)
+        throw Form::GradeTooHighException("Max grade equal 1");
+    else if (check & 0x2)
+        throw Form::GradeTooLowException("Min grade equal 150");
+    std::cout << "Form was created (" + name + ", " + target + ")" << std::endl;
+    sign = false;
+}
+
 Form::Form(const Form &obj)
 : name(obj.name),  gradeSign(obj.gradeSign), gradeExec(obj.gradeExec)
 {
@@ -90,4 +103,9 @@ int Form::getGradeSign(void) const
 int Form::getGradeExec(void) const
 {
     return gradeExec;
+}
+
+const std::string   &Form::getTarget(void) const
+{
+    return target;
 }

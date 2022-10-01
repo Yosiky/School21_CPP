@@ -4,6 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 void    testOne(void)
 {
@@ -96,7 +97,12 @@ int main(void)
     {
 //        testOne();
 //        testTwo();
-        testThree();
+//        testThree();
+        Intern  a;
+        Form *b = a.makeForm("robotomy request", "Bender");
+
+        std::cout << "Form: " << b->getName() << std::endl << "Target: " << b->getTarget() << std::endl;
+        delete b;
     }
    catch (std::exception &a)
     {

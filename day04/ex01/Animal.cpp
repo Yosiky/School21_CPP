@@ -25,7 +25,7 @@ Animal  &Animal::operator=(const Animal &obj)
                                        
 void    Animal::makeSound(void) const
 {
-    std::cout << type + " sound" << std::endl;
+    std::cout << "Animal sound" << std::endl;
 }
 
 const std::string &Animal::getType(void) const

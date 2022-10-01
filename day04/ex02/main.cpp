@@ -61,9 +61,9 @@ void    testFour(void)
 
 int main()
 {
-//    testOne();
+    testOne();
 //    testTwo();
-//    testThree();
+    testThree();
     testFour();
     return 0;
 }

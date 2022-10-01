@@ -1,11 +1,11 @@
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -pedantic-errors -Wctor-dtor-privacy -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wfloat-equal -Wshadow -Wcast-qual -Wconversion -Wzero-as-null-pointer-constant -Wextra-semi -Wsign-conversion -std=c++98 -Wshadow -Wno-shadow
+CFLAGS	=	-Wall -Wextra -Werror -pedantic-errors -Wctor-dtor-privacy -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wfloat-equal -Wshadow -Wcast-qual -Wconversion -Wzero-as-null-pointer-constant -Wextra-semi -Wsign-conversion -std=c++98
 
 SRC		=	main		\
 			ClapTrap	\
 			ScavTrap	\
 			FragTrap	\
-			DiamondTrap
+			DiamondTrap 
 
 OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
@@ -17,7 +17,7 @@ HEADER		=	ClapTrap.hpp	\
 				DiamondTrap.hpp
 
 
-NAME		=	diamondTrap
+NAME		=	Diamond
 
 .PHONY:	all clean fclean re
 

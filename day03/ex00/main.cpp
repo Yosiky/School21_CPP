@@ -11,6 +11,7 @@ int main(void)
         dev.beRepaired(1);
     for (int i = 0; i < 6; ++i)
         jen.takeDamage(2);
+    jen.attack("Kostya");
     kos.attack("Jenya");
 
     return 0;

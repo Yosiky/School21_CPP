@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-: Form(target, 25, 5)
+: Form("PresidentialPardonForm", target, 25, 5)
 {
     std::cout << "PresidentialPardonForm was created" << std::endl;
 }
@@ -20,5 +20,5 @@ void    PresidentialPardonForm::execute(const Bureaucrat &obj) const
     }
     else
         throw SignException();
-    std::cout << getName() + " was pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << getTarget() + " was pardoned by Zaphod Beeblebrox" << std::endl;
 }
