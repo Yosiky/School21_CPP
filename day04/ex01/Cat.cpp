@@ -42,3 +42,8 @@ const std::string   &Cat::getIdea(int num) const
     num %= BRAIN_COUNT_IDEAS;
     return brain->ideas[num];
 }
+
+void    Cat::makeSound(void) const
+{
+    std::cout << "Cat sound" << std::endl;
+}

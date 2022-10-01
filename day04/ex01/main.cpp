@@ -65,6 +65,7 @@ void    testFour(void)
     delete i;
     Dog     b;
     Animal  *a = &b;
+    std::cout << "Start test 4" << std::endl;
     std::cout << a->getType() << std::endl;
     b.setIdea(0, "I'm dog?");
     Dog     c = b;
