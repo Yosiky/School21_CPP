@@ -28,11 +28,6 @@ Dog &Dog::operator=(const Dog &obj)
     return *this;
 }
 
-void    Dog::makeSound(void) const
-{
-    std::cout << "I'm dog" << std::endl;
-}
-
 void    Dog::setIdea(int num, const std::string &str)
 {
     if (num < 0 || num >= BRAIN_COUNT_IDEAS)
@@ -46,4 +41,9 @@ const std::string   &Dog::getIdea(int num) const
     num += BRAIN_COUNT_IDEAS;
     num %= BRAIN_COUNT_IDEAS;
     return brain->ideas[num];
+}
+
+void    Dog::makeSound(void) const
+{
+    std::cout << "Dog sound" << std::endl;
 }
