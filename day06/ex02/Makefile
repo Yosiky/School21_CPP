@@ -1,13 +1,17 @@
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -pedantic-errors -Wctor-dtor-privacy -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wfloat-equal -Wshadow -Wcast-qual -Wconversion -Wzero-as-null-pointer-constant -Wextra-semi -Wsign-conversion -std=c++98 -Wshadow -Wno-shadow -g -pedantic-errors
 
-SRC		=	main					\
+SRC		=	main			\
+			Base		
 
 OBJ_DIR	=	obj
 OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
 HEADER_DIR	=	.
-HEADER		=	.
+HEADER		=	A.hpp		\
+				B.hpp		\
+				C.hpp		\
+				Base.hpp	
 
 NAME		=	convert
 
@@ -29,7 +33,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)/%.o:	%.cpp Makefile
-	$(CC) $(CFLAGS) $< -c -o $@ 
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) $< -c -o $@ 
 
 $(NAME):	$(OBJ) $(HEADER_DIR)/$(HEADER)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) $(OBJ) -o $@
