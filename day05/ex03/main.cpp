@@ -100,9 +100,15 @@ int main(void)
 //        testThree();
         Intern  a;
         Form *b = a.makeForm("robotomy request", "Bender");
+        Form *c = a.makeForm("pardon request", "Pardon");
+        Form *d = a.makeForm("shrubbery request", "Hello");
 
         std::cout << "Form: " << b->getName() << std::endl << "Target: " << b->getTarget() << std::endl;
+        std::cout << "Form: " << c->getName() << std::endl << "Target: " << c->getTarget() << std::endl;
+        std::cout << "Form: " << d->getName() << std::endl << "Target: " << d->getTarget() << std::endl;
         delete b;
+        delete c;
+        delete d;
     }
    catch (std::exception &a)
     {

@@ -6,11 +6,11 @@ Intern::Intern(void)
 Intern::~Intern(void)
 { }
 
-Form    *Intern::makeForm(__attribute__((unused))const std::string &form, __attribute__((unused))const std::string &nameForm)
+Form    *Intern::makeForm(const std::string &form, const std::string &nameForm)
 {
-    const unsigned char hashPardon = 180;
+    const unsigned char hashPardon = 172;
     const unsigned char hashRobotomy = 77;
-    const unsigned char hashCreation = 183;
+    const unsigned char hashCreation = 22;
 
     Form    *pForm;
     switch (hash(form))
