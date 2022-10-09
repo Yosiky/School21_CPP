@@ -7,6 +7,7 @@
 #include <iostream>
 #include <exception>
 
+#define UNUSED __attribute__((__unused__))
 
 Base    *generate(void)
 {
@@ -36,21 +37,21 @@ void    indetify(Base &p)
     std::cout << "class ";
     try
     {
-        dynamic_cast<A &>(p);
+        UNUSED A    &a = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
         return ;
     }
     catch (std::exception &a) { }
     try
     {
-        dynamic_cast<B &>(p);
+        UNUSED B    &b = dynamic_cast<B &>(p);
         std::cout << "B" << std::endl;
         return ;
     }
     catch (std::exception &a) { }
     try
     {
-        dynamic_cast<C &>(p);
+        UNUSED C    &c = dynamic_cast<C &>(p);
         std::cout << "C" << std::endl;
         return ;
     }
