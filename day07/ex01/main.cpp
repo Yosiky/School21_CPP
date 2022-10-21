@@ -26,6 +26,7 @@ int main(void)
     const int   SIZE_STR_ARR = 3;
     std::string arr2[] = {"hello", "alaksjdf", "world"};
 
+    std::cout << "function ptr is NULL: " << iter(arr, SIZE_INT_ARR, nullptr) << std::endl;
     iter(arr, SIZE_INT_ARR, print<int>);
     std::cout << std::endl;
     iter(arr, SIZE_INT_ARR, func);
