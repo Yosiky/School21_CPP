@@ -18,12 +18,17 @@ Span    &Span::operator=(const Span &obj)
     end = obj.end;
     return *this;
 }
-
 void    Span::addNumber(uint newValue)
 {
     if (end == arr.size())
         throw Span::SpanException("error");
     arr[end++] = newValue;
+}
+
+void    Span::addNumber(std::vector<uint>::iterator begin, std::vector<uint>::iterator end)
+{
+    for (std::vector<uint>::iterator &i = begin; i != end; ++i)
+        addNumber(*i);
 }
 
 void    Span::addArrayNumbers(const uint *arr, uint size)
@@ -36,21 +41,17 @@ uint    Span::shortestSpan(void)
 {
     if (end < 2)
         throw Span::SpanException("Error count");
-    uint min[2] = { arr[0], arr[1] };
+    uint    m;
+    std::vector<uint> arr_copy(arr.begin(), arr.begin() + end);
 
-    if (min[0] > min[1]) 
-        std::swap(min[0], min[1]);
+    std::sort(arr_copy.begin(), arr_copy.end());
+    m = arr_copy[1] - arr_copy[0];
     for (uint i = 2; i < end; ++i)
     {
-        if (arr[i] < min[0])
-        {
-            min[1] = min[0];
-            min[0] = arr[i];
-        }
-        else if (arr[i] < min[1])
-            min[1] = arr[i];
+        if (m > arr_copy[i] - arr_copy[i - 1])
+            m = arr_copy[i] - arr_copy[i - 1];
     }
-    return min[1] - min[0];
+    return m;
 }
 
 uint    Span::longestSpan(void)

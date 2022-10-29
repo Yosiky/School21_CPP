@@ -32,6 +32,7 @@ public:
 
     Span    &operator=(const Span &obj);
 
+    void    addNumber(std::vector<uint>::iterator begin, std::vector<uint>::iterator end);
     void    addNumber(uint newValue);
     void    addArrayNumbers(const uint *arr, uint size);
     uint    shortestSpan(void);
