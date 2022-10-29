@@ -14,7 +14,6 @@ public:
     typedef typename std::stack<T, Container>::container_type::const_iterator citerator;
     typedef typename std::stack<T, Container>::container_type::reverse_iterator riterator;
     typedef typename std::stack<T, Container>::container_type::const_reverse_iterator criterator;
-    //MutantStack<T> &operator=(const MutantStack<T> &obj);
 
     iterator   begin(void)
     {
@@ -26,12 +25,12 @@ public:
         return c.end();
     }
 
-    citerator   cbegin(void)
+    citerator   cbegin(void) const
     {
         return c.cbegin();
     }
                            
-    citerator  cend(void)
+    citerator  cend(void) const
     {
         return c.cend();
     }
@@ -46,21 +45,15 @@ public:
         return c.rend();
     }
                              
-    criterator   crbegin(void)
+    criterator   crbegin(void) const
     {
         return c.crbegin();
     }
                            
-    criterator  crend(void)
+    criterator  crend(void) const 
     {
         return c.crend();
     }
-
-
-
-
 };
-
-//# include "MutantStack.tpp"
 
 #endif

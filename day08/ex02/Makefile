@@ -8,7 +8,6 @@ OBJ		=	$(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
 HEADER_DIR	=	.
 HEADER		=	MutantStack.hpp
-FILES_TPP	=	MutantStack.tpp
 
 NAME		=	something
 
@@ -32,5 +31,5 @@ $(OBJ_DIR):
 $(OBJ_DIR)/%.o:	%.cpp Makefile
 	$(CC) $(CFLAGS) -I$(HEADER_DIR) $< -c -o $@ 
 
-$(NAME):	$(OBJ) $(HEADER_DIR)/$(HEADER) $(FILES_TPP)
+$(NAME):	$(OBJ) $(HEADER_DIR)/$(HEADER) 
 	$(CC) -I$(HEADER_DIR) $(OBJ) -o $@
