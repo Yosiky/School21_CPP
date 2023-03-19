@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -O0 -g3 -std=c++98 -Wall -Wextra -Werror
 
 SRC = main				\
 	  BitcoinExchange
