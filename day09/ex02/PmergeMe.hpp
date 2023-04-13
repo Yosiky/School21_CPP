@@ -1,27 +1,27 @@
 #ifndef PMERGE_HPP
 # define PMERGE_HPP
 
-# include "algorithm"
+# include <algorithm>
 
 template <class T>
-class Pmerge {
+class PmergeMe {
 
     typedef T   container;
 
     container c;
 
-    Pmerge(void);
+    PmergeMe(void);
 
 public:
 
-    Pmerge(int argc, char **argv) {
+    PmergeMe(int argc, char **argv) {
         for (int i = 0; i < argc; ++i) {
             c.push_back(std::atoi(argv[i]));
         }
     }
 
     void sort(void) {
-        std::merge(c.begin(), c.end());
+        std::sort(c.begin(), c.end());
     }
 
 };

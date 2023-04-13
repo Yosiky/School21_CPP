@@ -2,16 +2,16 @@ CC = g++
 CFLAGS = -O0 -g3 -std=c++98 -Wall -Wextra -Werror
 
 SRC = main				\
-	  RPN
+	  PmergeMe
 
 OBJ_DIR = obj
 OBJ	= $(addprefix $(OBJ_DIR)/,$(SRC:=.o))
 
-HEADER = RPN.hpp
+HEADER = PmergeMe.hpp
 
-INCLUDES = ./
+INCLUDES = .
 
-NAME = RPN
+NAME = PmergeMe
 
 all: $(OBJ_DIR) $(NAME)
 
